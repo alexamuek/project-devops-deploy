@@ -209,4 +209,4 @@ make add-tag
 make push-image  
 ```  
 
-The repo has CI Action *push-image* which check the app (tests, linters), build new image and push it to Docker Hub Registry. It works only for commits to main branch.
+The repo has CI Action **push-image.yaml** which check the app (tests, linters), build new image and push it to Docker Hub Registry. It works only for commits to main branch.
