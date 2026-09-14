@@ -199,6 +199,7 @@ Override the host/port with `MANAGEMENT_SERVER_PORT` if you changed it; no Prome
 5. Optional: run `curl -I "$(curl -s .../api/files/view?key=... | jq -r .url)"` to ensure the presigned URL is valid from the production environment.  
 
 ### Student's part  
+[![Actions Status](https://github.com/alexamuek/project-devops-deploy/actions/workflows/push-image.yml/badge.svg)](https://github.com/alexamuek/project-devops-deploy/actions)  
 
 Manually to build and push image to Docker Hub Registry:  
 
