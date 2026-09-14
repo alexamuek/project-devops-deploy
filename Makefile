@@ -25,3 +25,12 @@ lint-fix:
 	./gradlew spotlessApply
 
 .PHONY: build
+
+build-image:
+	docker build -t bulletin-app .
+
+add-tag:
+	docker tag bulletin:latest  alexamuek/project-devops-deploy:latest
+
+push-image:
+	docker push alexamuek/project-devops-deploy:latest
