@@ -196,4 +196,16 @@ Override the host/port with `MANAGEMENT_SERVER_PORT` if you changed it; no Prome
     - Response from `/api/files/upload` contains a non-empty `key`.
     - Image shows up in bulletin show view (URL should either point to CDN or be a presigned S3 link).
     - Object exists in S3 bucket (check via AWS console or `aws s3 ls s3://your-bucket/bulletins/...`).
-5. Optional: run `curl -I "$(curl -s .../api/files/view?key=... | jq -r .url)"` to ensure the presigned URL is valid from the production environment.
+5. Optional: run `curl -I "$(curl -s .../api/files/view?key=... | jq -r .url)"` to ensure the presigned URL is valid from the production environment.  
+
+### Student's part  
+
+Manually to build and push image to Docker Hub Registry:  
+
+```bash
+make build-image  
+make add-tag  
+make push-image  
+```  
+
+The repo has CI Action *push-image* which check the app (tests, linters), build new image and push it to Docker Hub Registry. It works only for commits to main branch.
