@@ -28,5 +28,6 @@ FROM eclipse-temurin:21-jre AS run-app
 WORKDIR /app
 COPY --from=backend-build /app/build/libs/project-devops-deploy-0.0.1-SNAPSHOT.jar ./build/libs/
 RUN mkdir -p /app/logs
+RUN mkdir -p /app/tests
 CMD ["sh", "-c", "exec java $JAVA_OPTS -jar build/libs/project-devops-deploy-0.0.1-SNAPSHOT.jar >> /app/logs/application.log 2>&1"]
 
